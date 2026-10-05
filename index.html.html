@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Excusas Infalibles</title>
+    <style>
+        /* Estilos visuales (CSS) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .contenedor {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 90%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+        p.subtitulo {
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        .excusa-caja {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        #texto-excusa {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        button {
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+        button:hover {
+            background-color: #5b4bc4;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>¿Necesitas escaquearte? 🤫</h1>
+        <p class="subtitulo">Presiona el botón para obtener una excusa aleatoria.</p>
+        
+        <div class="excusa-caja">
+            <p id="texto-excusa">Haz clic abajo para salvar tu día...</p>
+        </div>
+
+        <button onclick="generarExcusa()">Generar Excusa</button>
+    </div>
+
+    <script>
+        // Lógica de la web (JavaScript)
+        const excusas = [
+            "Se me ha actualizado el Windows del ordenador y va por el 2%... Esto va para largo.",
+            "Mi gato se ha dormido encima de mis piernas y la ley de protección animal me impide moverme.",
+            "Me he equivocado de autobús y ahora mismo estoy de camino a otra ciudad.",
+            "He ido a abrir la puerta de casa y se me ha roto la llave dentro de la cerradura. Estoy encerrado.",
+            "Me he tomado un paracetamol que resultó ser un antihistamínico y no puedo mantener los ojos abiertos.",
+            "Ha venido el técnico del wifi por sorpresa y si no me quedo aquí, no me lo arreglan en un mes.",
+            "Se me ha inundado la cocina porque el lavavajillas ha decidido independizarse hoy.",
+            "Mi madre me ha llamado llorando porque no sabe cómo adjuntar un PDF y tengo que ir a salvarla."
+        ];
+
+        function generarExcusa() {
+            // Elige una excusa al azar de la lista
+            const indiceAleatorio = Math.floor(Math.random() * excusas.length);
+            // La muestra en la pantalla
+            document.getElementById("texto-excusa").innerText = excusas[indiceAleatorio];
+        }
+    </script>
+
+</body>
+</html>
